@@ -136,7 +136,9 @@ function Header() {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          <Nav className="ml-auto" navbar>
+
+          {/* Account, Dropdown, Log out */}
+          {/* <Nav className="ml-auto" navbar>
             <Nav.Item>
               <Nav.Link
                 className="m-0"
@@ -201,7 +203,7 @@ function Header() {
                 <span className="no-icon">Log out</span>
               </Nav.Link>
             </Nav.Item>
-          </Nav>
+          </Nav> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>
