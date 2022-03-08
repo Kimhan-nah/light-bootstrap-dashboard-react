@@ -33,7 +33,6 @@ function Dashboard() {
   // filter, reduce -> 배열 만들기
 
   // console.log(Object.keys(data).length); -> 총 데이터
-  // age 20대
 
   return (
     <>
