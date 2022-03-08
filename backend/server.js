@@ -5,7 +5,9 @@
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3001;
+const port = 3001;
+
+const cors = require("cors");
 
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
@@ -13,6 +15,9 @@ const models = require("./models");
 
 // body-parser
 app.use(express.json());
+
+// cors
+app.use(cors());
 
 models.sequelize
   .sync()
@@ -24,6 +29,7 @@ models.sequelize
     console.log(err);
   });
 
+// /backend/patient/age
 const patient = require("./router/patient");
 app.use("/backend/patient", patient);
 

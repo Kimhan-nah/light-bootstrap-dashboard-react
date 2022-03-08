@@ -64,11 +64,6 @@ function Admin() {
     }
   }, [location]);
 
-  axios.get("/backend/patient").then((res) => {
-    console.log(res);
-    if (res.data.id) console.log(res.data.id);
-  });
-
   return (
     <>
       <div className="wrapper">

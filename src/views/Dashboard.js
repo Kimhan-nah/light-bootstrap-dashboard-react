@@ -15,8 +15,26 @@ import {
   OverlayTrigger,
   Tooltip,
 } from "react-bootstrap";
+import axios from "axios";
 
 function Dashboard() {
+  // usestate useEffect로 비동기 처리 -> 렌더링!
+  const data = axios
+    .get("http://localhost:3001/backend/patient/age")
+    .then((res) => {
+      console.log("client : data 받음");
+      console.log(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  //graphql : 프론트에서 쿼리 요청
+  // filter, reduce -> 배열 만들기
+
+  // console.log(Object.keys(data).length); -> 총 데이터
+  // age 20대
+
   return (
     <>
       <Container fluid>

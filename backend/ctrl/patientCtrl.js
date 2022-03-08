@@ -4,25 +4,24 @@
 // client -> backend/server.js -> backend/router/patient.js -> backend/ctrl/patient.js -> client
 
 const models = require("../models");
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
 
 const age = async (req, res) => {
-  const data = await models.covid
+  await models.covid
     .findAll({
       attributes: ["id", "age"],
-      where: {
-        age: { [Op.gte]: 20 },
-        age: { [Op.lt]: 30 },
-      },
     })
     .then((data) => {
-      console.log("=======HELLO=========");
+      console.log("=======DATA=========");
       console.log(JSON.stringify(data));
+      console.log("======length=======");
+      console.log(Object.keys(data).length);
+      res.status(200).send(data);
+    })
+    .catch((err) => {
+      console.log(err);
     });
-
-  if (data[0]) {
-    console.log(data[0], "check");
-    res.status(200).send(data[0]);
-  } else res.status(401).send();
 };
 
 module.exports = { age };
