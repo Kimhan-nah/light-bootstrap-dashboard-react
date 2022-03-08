@@ -18,7 +18,7 @@ import {
 import axios from "axios";
 
 function Dashboard() {
-  // usestate useEffect로 비동기 처리 -> 렌더링!
+  // usestate useEffect로 비동기 처리 -> 렌더링 전에 데이터 받기 위해!
   const data = axios
     .get("http://localhost:3001/backend/patient/age")
     .then((res) => {
@@ -33,7 +33,6 @@ function Dashboard() {
   // filter, reduce -> 배열 만들기
 
   // console.log(Object.keys(data).length); -> 총 데이터
-  // age 20대
 
   return (
     <>
